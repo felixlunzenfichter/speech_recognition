@@ -50,6 +50,7 @@ class SpeechRecognition {
         availabilityHandler(call.arguments);
         break;
       case "speech.onCurrentLocale":
+        print('my package');
         currentLocaleHandler(call.arguments);
         break;
       case "speech.onSpeech":
