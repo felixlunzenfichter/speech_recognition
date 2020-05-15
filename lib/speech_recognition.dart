@@ -35,8 +35,7 @@ class SpeechRecognition {
 
   /// start listening
   Future listen({String locale}) =>
-      _channel.invokeMethod("speech.listen", locale).then((value) => print('my package'));
-  
+      _channel.invokeMethod("speech.listen", locale);
 
   /// cancel speech
   Future cancel() => _channel.invokeMethod("speech.cancel");
@@ -54,6 +53,7 @@ class SpeechRecognition {
         currentLocaleHandler(call.arguments);
         break;
       case "speech.onSpeech":
+        print('my package');
         recognitionResultHandler(call.arguments);
         break;
       case "speech.onRecognitionStarted":
